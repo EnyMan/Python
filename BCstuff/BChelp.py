@@ -8,7 +8,10 @@ __modeule_git__ = "https://github.com/EnyMan/Python/tree/master/BCstuff"
  
 def DownloadLinks(word, words_eol, userdata):
 
-	if word[1] == "recuva":
+	if word[1] == "-h":
+		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel")
+
+	elif word[1] == "recuva":
 		hexchat.command("say To get Recuva click -> http://www.bleepingcomputer.com/download/recuva/")
 
 	elif word[1] == "mbam":
@@ -31,6 +34,12 @@ def DownloadLinks(word, words_eol, userdata):
 
 	elif word[1] == "hidden":
 		hexchat.command("say How to see hidden files/folders on windows click -> http://www.bleepingcomputer.com/tutorials/how-to-see-hidden-files-in-windows/")
+
+	elif word[1] == "restorepoint":
+		hexchat.command("say System restore point click -> http://windows.microsoft.com/cs-cz/windows-vista/turn-back-time-on-your-pc-undo-system-changes-with-system-restore")
+
+	elif word[1] == "intel":
+		hexchat.command("say Intel Update Utility click -> http://www.intel.com/p/en_US/support/detect?iid=dc_iduu")
 
 	else:
 		hexchat.command("say To get more help click -> http://www.bleepingcomputer.com/")
@@ -77,4 +86,4 @@ def HelpWheelrand(word, words_eol, userdata):
 
 hexchat.hook_command("spin", HelpWheelrand)
 hexchat.hook_command("bc", DownloadLinks)
-print "Loaded spin.py /spin to spin the wheel \n/bc [program] to show download link."
+print "Loaded spin.py /spin to spin the wheel \n/bc [program] to show download link, use -h for help."
