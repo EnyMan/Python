@@ -4,6 +4,7 @@ import random
 __module_name__ = "BleepingVomputer helping tool"
 __module_version__ = "1.2"
 __module_description__ = "Helps with questions."
+__modeule_git__ = "https://github.com/EnyMan/Python/tree/master/BCstuff"
  
 def DownloadLinks(word, words_eol, userdata):
 
