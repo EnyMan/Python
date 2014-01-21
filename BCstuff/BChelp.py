@@ -6,7 +6,7 @@ __module_version__ = "1.2"
 __module_description__ = "Helps with questions."
 __modeule_git__ = "https://github.com/EnyMan/Python/tree/master/BCstuff"
  
-def DownloadLinks(word, words_eol, userdata):
+def Links(word, words_eol, userdata):
 
 	if word[1] == "-h":
 		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel, infection")
@@ -88,5 +88,5 @@ def HelpWheelrand(word, words_eol, userdata):
  
 
 hexchat.hook_command("spin", HelpWheelrand)
-hexchat.hook_command("bc", DownloadLinks)
+hexchat.hook_command("bc", Links)
 print "Loaded spin.py /spin to spin the wheel \n/bc [program] to show download link, use -h for help."
