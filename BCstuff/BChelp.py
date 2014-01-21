@@ -69,7 +69,7 @@ def HelpWheel(word, words_eol, userdata):
 		hexchat.command("say Yes, click OK")
 
 	elif val2 == 3:
-		hexchat.command("say Your data are completly lost and can't be recovered.")
+		hexchat.command("say Your data is completely lost and can't be recovered.")
 
 	elif val2 == 4:
 		hexchat.command("say OK, let me google that for you.")
