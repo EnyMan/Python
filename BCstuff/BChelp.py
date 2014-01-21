@@ -9,40 +9,43 @@ __modeule_git__ = "https://github.com/EnyMan/Python/tree/master/BCstuff"
 def DownloadLinks(word, words_eol, userdata):
 
 	if word[1] == "-h":
-		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel")
+		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel, infection")
 
 	elif word[1] == "recuva":
-		hexchat.command("say To get Recuva click -> http://www.bleepingcomputer.com/download/recuva/")
+		hexchat.command("say To get Recuva CLICK -> http://www.bleepingcomputer.com/download/recuva/")
 
 	elif word[1] == "mbam":
-		hexchat.command("say To get Recuva Malwarebytes Anti-Malware click -> http://www.bleepingcomputer.com/download/malwarebytes-anti-malware/")
+		hexchat.command("say To get Malwarebytes Anti-Malware CLICK -> http://www.bleepingcomputer.com/download/malwarebytes-anti-malware/")
 
 	elif word[1] == "speccy":
-		hexchat.command("say To get Speccy click -> http://www.bleepingcomputer.com/download/speccy/")
+		hexchat.command("say To get Speccy CLICK -> http://www.bleepingcomputer.com/download/speccy/")
 
 	elif word[1] == "jrt":
-		hexchat.command("say To get Junkware Removal Tool click -> http://www.bleepingcomputer.com/download/junkware-removal-tool/")
+		hexchat.command("say To get Junkware Removal Tool CLICK -> http://www.bleepingcomputer.com/download/junkware-removal-tool/")
 
 	elif word[1] == "adw":
-		hexchat.command("say To get AdwCleaner click -> http://www.bleepingcomputer.com/download/adwcleaner/")
+		hexchat.command("say To get AdwCleaner CLICK -> http://www.bleepingcomputer.com/download/adwcleaner/")
 
 	elif word[1] == "ccleaner":
-		hexchat.command("say To get CCleaner click -> http://www.bleepingcomputer.com/download/ccleaner/")
+		hexchat.command("say To get CCleaner CLICK -> http://www.bleepingcomputer.com/download/ccleaner/")
 
 	elif word[1] == "speedfan":
-		hexchat.command("say To get SpeedFan click -> http://www.bleepingcomputer.com/download/speedfan/")
+		hexchat.command("say To get SpeedFan CLICK -> http://www.bleepingcomputer.com/download/speedfan/")
 
 	elif word[1] == "hidden":
-		hexchat.command("say How to see hidden files/folders on windows click -> http://www.bleepingcomputer.com/tutorials/how-to-see-hidden-files-in-windows/")
+		hexchat.command("say How to see hidden files/folders on windows CLICK -> http://www.bleepingcomputer.com/tutorials/how-to-see-hidden-files-in-windows/")
 
 	elif word[1] == "restorepoint":
-		hexchat.command("say System restore point click -> http://windows.microsoft.com/cs-cz/windows-vista/turn-back-time-on-your-pc-undo-system-changes-with-system-restore")
+		hexchat.command("say System restore point CLICK -> http://windows.microsoft.com/cs-cz/windows-vista/turn-back-time-on-your-pc-undo-system-changes-with-system-restore")
 
 	elif word[1] == "intel":
-		hexchat.command("say Intel Update Utility click -> http://www.intel.com/p/en_US/support/detect?iid=dc_iduu")
+		hexchat.command("say Intel Update Utility CLICK -> http://www.intel.com/p/en_US/support/detect?iid=dc_iduu")
+
+	elif word[1] == "infection":
+		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/f/22/virus-trojan-spyware-and-malware-removal-logs/")		
 
 	else:
-		hexchat.command("say To get more help click -> http://www.bleepingcomputer.com/")
+		hexchat.command("say To get more help CLICK -> http://www.bleepingcomputer.com/")
 
 	return hexchat.EAT_ALL
  
