@@ -87,6 +87,69 @@ def HelpWheelrand(word, words_eol, userdata):
 	return hexchat.EAT_ALL
  
 
+def AutoLinks(word, words_eol, userdata):
+
+	if hexchat.get_info("away") == None:
+		return hexchat.EAT_PLUGIN
+
+	lenght = len(word[1])
+	#print "lenght ", lenght
+	
+	loader = word[1][0:9]
+	#print "loader " + loader
+
+	message = word[1][10:lenght]
+	#print "message " + message
+
+	if loader == "mous: /bc":
+		print "found command"
+	else:
+		#print "no '/bc' insted '" + loader + "' found"
+		return hexchat.EAT_PLUGIN
+
+	if message == "-h":
+		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel, infection")
+
+	elif message == "recuva":
+		hexchat.command("say To get Recuva CLICK -> http://www.bleepingcomputer.com/download/recuva/")
+
+	elif message == "mbam":
+		hexchat.command("say To get Malwarebytes Anti-Malware CLICK -> http://www.bleepingcomputer.com/download/malwarebytes-anti-malware/")
+
+	elif message == "speccy":
+		hexchat.command("say To get Speccy CLICK -> http://www.bleepingcomputer.com/download/speccy/")
+
+	elif message == "jrt":
+		hexchat.command("say To get Junkware Removal Tool CLICK -> http://www.bleepingcomputer.com/download/junkware-removal-tool/")
+
+	elif message == "adw":
+		hexchat.command("say To get AdwCleaner CLICK -> http://www.bleepingcomputer.com/download/adwcleaner/")
+
+	elif message == "ccleaner":
+		hexchat.command("say To get CCleaner CLICK -> http://www.bleepingcomputer.com/download/ccleaner/")
+
+	elif message == "speedfan":
+		hexchat.command("say To get SpeedFan CLICK -> http://www.bleepingcomputer.com/download/speedfan/")
+
+	elif message == "hidden":
+		hexchat.command("say How to see hidden files/folders on windows CLICK -> http://www.bleepingcomputer.com/tutorials/how-to-see-hidden-files-in-windows/")
+
+	elif message == "restorepoint":
+		hexchat.command("say System restore point CLICK -> http://windows.microsoft.com/cs-cz/windows-vista/turn-back-time-on-your-pc-undo-system-changes-with-system-restore")
+
+	elif message == "intel":
+		hexchat.command("say Intel Update Utility CLICK -> http://www.intel.com/p/en_US/support/detect?iid=dc_iduu")
+
+	elif message == "infection":
+		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/f/22/virus-trojan-spyware-and-malware-removal-logs/")		
+
+	else:
+		hexchat.command("say To get more help CLICK -> http://www.bleepingcomputer.com/")
+
+	return hexchat.EAT_PLUGIN
+
+
+hexchat.hook_print("Channel Msg Hilight", AutoLinks)
 hexchat.hook_command("spin", HelpWheelrand)
 hexchat.hook_command("bc", Links)
 print "Loaded spin.py /spin to spin the wheel \n/bc [program] to show download link, use -h for help."
