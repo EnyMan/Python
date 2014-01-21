@@ -2,7 +2,7 @@ import hexchat
 import random
 
 __module_name__ = "BleepingVomputer helping tool"
-__module_version__ = "1.4"
+__module_version__ = "1.5"
 __module_description__ = "Helps with questions."
 __modeule_git__ = "https://github.com/EnyMan/Python/tree/master/BCstuff"
  
@@ -11,7 +11,7 @@ def Links(word, words_eol, userdata):
 	#print word, " ", words_eol, " ", userdata
 
 	if word[1] == "-h":
-		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel, infection")
+		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel, infection, malware")
 
 	elif word[1] == "recuva":
 		hexchat.command("say To get Recuva CLICK -> http://www.bleepingcomputer.com/download/recuva/")
@@ -44,8 +44,11 @@ def Links(word, words_eol, userdata):
 		hexchat.command("say Intel Update Utility CLICK -> http://www.intel.com/p/en_US/support/detect?iid=dc_iduu")
 
 	elif word[1] == "infection":
-		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/f/22/virus-trojan-spyware-and-malware-removal-logs/")		
+		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/t/34773/preparation-guide-for-use-before-using-malware-removal-tools-and-requesting-help/")		
 
+	elif word[1] == "malware":
+		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/f/103/am-i-infected-what-do-i-do/")	
+	
 	else:
 		hexchat.command("say To get more help CLICK -> http://www.bleepingcomputer.com/")
 
@@ -93,6 +96,19 @@ def HelpWheel(word, words_eol, userdata):
  
 
 def AutoLinks(word, words_eol, userdata):
+
+	array = hexchat.get_list("users")
+	user = word[0]
+
+	for i in array:
+		if i.nick == user:
+			if i.prefix == "+" or i.prefix == "@" or i.prefix == "&" or i.prefix == "%":
+				break
+			else:
+				print "bad prefix ", i.prefix
+				return hexchat.EAT_PLUGIN
+		else:
+			pass
 
 	if hexchat.get_info("away") == None:
 		return hexchat.EAT_PLUGIN
