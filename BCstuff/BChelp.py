@@ -2,7 +2,7 @@ import hexchat
 import random
 
 __module_name__ = "BleepingVomputer helping tool"
-__module_version__ = "1.5"
+__module_version__ = "1.6"
 __module_description__ = "Helps with questions."
 __modeule_git__ = "https://github.com/EnyMan/Python/tree/master/BCstuff"
  
@@ -11,7 +11,7 @@ def Links(word, words_eol, userdata):
 	#print word, " ", words_eol, " ", userdata
 
 	if word[1] == "-h":
-		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel, infection, malware")
+		hexchat.command("say Posible links: recuva, mbam, speccy, jrt, adw, ccleaner, speedfan, hidden, restorepoint, intel, infection[forum], malware[guide], mini")
 
 	elif word[1] == "recuva":
 		hexchat.command("say To get Recuva CLICK -> http://www.bleepingcomputer.com/download/recuva/")
@@ -43,11 +43,14 @@ def Links(word, words_eol, userdata):
 	elif word[1] == "intel":
 		hexchat.command("say Intel Update Utility CLICK -> http://www.intel.com/p/en_US/support/detect?iid=dc_iduu")
 
-	elif word[1] == "infection":
-		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/t/34773/preparation-guide-for-use-before-using-malware-removal-tools-and-requesting-help/")		
-
 	elif word[1] == "malware":
-		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/f/103/am-i-infected-what-do-i-do/")	
+		hexchat.command("say Preparation guide for malware removal CLICK -> http://www.bleepingcomputer.com/forums/t/34773/preparation-guide-for-use-before-using-malware-removal-tools-and-requesting-help/")		
+
+	elif word[1] == "infection":
+		hexchat.command("say For infection removal CLICK -> http://www.bleepingcomputer.com/forums/f/103/am-i-infected-what-do-i-do/")
+
+	elif word[1] == "mini":
+		hexchat.command("say To get MiniToolBox CLICK -> http://www.bleepingcomputer.com/download/minitoolbox/")	
 	
 	else:
 		hexchat.command("say To get more help CLICK -> http://www.bleepingcomputer.com/")
@@ -121,17 +124,17 @@ def AutoLinks(word, words_eol, userdata):
 	loader = word[1][0:6].lower()
 	#print "loader " + loader
 	
-	command = word[1][6:9]
+	command = word[1][0:3]
 	
-	if command == "/bc":
-		#print "found /bc"
-		message = word[1][10:lenght]
-		Links(['bc', message], [word[1][7:lenght], message], None)
+	if command == "!bc":
+		#print "found !bc"
+		message = word[1][4:lenght]
+		Links(['bc', message], [word[1][1:lenght], message], None)
 	else:
 		#print "found something else"
-		command = word[1][6:11]
-		if command == "/spin":
-			#print "found /spin"
+		command = word[1][0:5]
+		if command == "!spin":
+			#print "found !spin"
 			HelpWheel(['spin'], ['spin'], None)
 		else:
 			#print "exiting"
@@ -139,7 +142,7 @@ def AutoLinks(word, words_eol, userdata):
 
 	return hexchat.EAT_PLUGIN
 
-hexchat.hook_print("Channel Msg Hilight", AutoLinks)
+hexchat.hook_print("Channel Message", AutoLinks)
 hexchat.hook_command("spin", HelpWheel)
 hexchat.hook_command("bc", Links)
 print "Loaded spin.py /spin to spin the wheel \n/bc [program] to show download link, use -h for help."
