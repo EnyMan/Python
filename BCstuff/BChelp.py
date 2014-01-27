@@ -103,6 +103,10 @@ def AutoLinks(word, words_eol, userdata):
 	array = hexchat.get_list("users")
 	user = word[0]
 
+	#to kill bnc
+	if hexchat.get_info("nick") == "enter BNC username here":
+		return hexchat.EAT_PLUGIN
+
 	for i in array:
 		if i.nick == user:
 			if i.prefix == "+" or i.prefix == "@" or i.prefix == "&" or i.prefix == "%":
@@ -113,8 +117,8 @@ def AutoLinks(word, words_eol, userdata):
 		else:
 			pass
 
-	if hexchat.get_info("away") == None:
-		return hexchat.EAT_PLUGIN
+	#if hexchat.get_info("away") == None:
+	#	return hexchat.EAT_PLUGIN
 	
 	#print word[1]
 	
