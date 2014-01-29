@@ -101,7 +101,10 @@ def HelpWheel(word, words_eol, userdata):
 def AutoLinks(word, words_eol, userdata):
 
 	array = hexchat.get_list("users")
-	user = word[0]
+	user = word[0][3:]
+
+	if  word[1][0:1] != "!":
+		return hexchat.EAT_PLUGIN
 
 	#to kill bnc
 	if hexchat.get_info("nick") == "enter BNC username here":
@@ -115,7 +118,7 @@ def AutoLinks(word, words_eol, userdata):
 				print "bad prefix ", i.prefix
 				return hexchat.EAT_PLUGIN
 		else:
-			pass
+			return hexchat.EAT_PLUGIN
 
 	#if hexchat.get_info("away") == None:
 	#	return hexchat.EAT_PLUGIN
