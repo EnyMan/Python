@@ -118,7 +118,7 @@ def AutoLinks(word, words_eol, userdata):
 				print "bad prefix ", i.prefix
 				return hexchat.EAT_PLUGIN
 		else:
-			return hexchat.EAT_PLUGIN
+			pass
 
 	#if hexchat.get_info("away") == None:
 	#	return hexchat.EAT_PLUGIN
