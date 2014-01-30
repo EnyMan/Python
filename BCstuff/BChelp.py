@@ -112,7 +112,7 @@ def AutoLinks(word, words_eol, userdata):
 
 	for i in array:
 		if i.nick == user:
-			if i.prefix == "+" or i.prefix == "@" or i.prefix == "&" or i.prefix == "%":
+			if i.prefix == "+" or i.prefix == "@" or i.prefix == "&" or i.prefix == "%" or i.prefix == "~":
 				break
 			else:
 				print "bad prefix ", i.prefix
